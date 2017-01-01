@@ -1,0 +1,22 @@
+{
+    "name": "i30/banhmi",
+    "description": "A flexible WordPress starter theme built on traditional MVC architecture and modern PHP concepts.",
+    "type": "wordpress-theme",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "i30",
+            "email": "contact.dangvu@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Banhmi\\": "libraries/"
+        }
+    }
+}
