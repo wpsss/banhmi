@@ -3,6 +3,7 @@ A flexible WordPress starter theme which provides consistent interfaces and brin
 
 ## Requirements
 - PHP >= 5.6
+- [Composer](https://getcomposer.org) >= 1.0
 - [WordPress](https://wordpress.org) >= 4.5
 
 ## Contributing
