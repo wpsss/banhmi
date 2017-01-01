@@ -8,13 +8,13 @@
  */
 interface iBox
 {
-  /**
-   * Add a box
-   */
-  function add();
+    /**
+     * Add a box
+     */
+    function add();
 
-  /**
-   * Remove a box
-   */
-  function remove();
+    /**
+     * Remove a box
+     */
+    function remove();
 }

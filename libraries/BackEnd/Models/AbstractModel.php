@@ -2,7 +2,7 @@
 /**
  * AbstractModel
  */
-use Banhmi\AbstractModel as BaseModel;
+use Banhmi\BaseModel;
 
 abstract class AbstractModel extends BaseModel
 {

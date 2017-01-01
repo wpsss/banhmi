@@ -4,10 +4,10 @@
  */
 interface iBrowser extends \SplObserver
 {
-  /**
-   * Render data
-   *
-   * @param  mixed  $data
-   */
-  function render($data);
+    /**
+     * Render data
+     *
+     * @param  mixed  $data
+     */
+    function render($data);
 }

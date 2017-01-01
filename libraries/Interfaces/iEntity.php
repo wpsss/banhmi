@@ -4,23 +4,23 @@
  */
 interface iEntity extends iData, \SplSubject
 {
-  /**
-   * Exist
-   */
-  function __isset($property);
+    /**
+     * Exist
+     */
+    function __isset($property);
 
-  /**
-   * Get
-   */
-  function __get($property);
+    /**
+     * Get
+     */
+    function __get($property);
 
-  /**
-   * Set
-   */
-  function __set($property, $value);
+    /**
+     * Set
+     */
+    function __set($property, $value);
 
-  /**
-   * Unset
-   */
-  function __unset($property);
+    /**
+     * Unset
+     */
+    function __unset($property);
 }

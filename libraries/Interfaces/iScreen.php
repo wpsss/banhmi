@@ -4,8 +4,8 @@
  */
 interface iScreen
 {
-  /**
-   * Display
-   */
-  function display();
+    /**
+     * Display
+     */
+    function display();
 }

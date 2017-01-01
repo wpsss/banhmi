@@ -4,17 +4,17 @@
  */
 interface iData
 {
-  /**
-   * Sanitize
-   *
-   * @param  mixed  $data
-   */
-  function sanitize($data);
+    /**
+     * Sanitize
+     *
+     * @param  mixed  $data
+     */
+    function sanitize($data);
 
-  /**
-   * Save
-   *
-   * @param  mixed  $data
-   */
-  function save($data);
+    /**
+     * Save
+     *
+     * @param  mixed  $data
+     */
+    function save($data);
 }
