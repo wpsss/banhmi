@@ -2,7 +2,7 @@
 /**
  * AbstractView
  */
-use Banhmi\AbstractView as BaseView;
+use Banhmi\BaseView;
 
 abstract class AbstractView extends BaseView
 {

@@ -8,13 +8,13 @@
  */
 interface iContent
 {
-  /**
-   * Register content type
-   */
-  function register();
+    /**
+     * Register content type
+     */
+    function register();
 
-  /**
-   * Unregister content type
-   */
-  function unregister();
+    /**
+     * Unregister content type
+     */
+    function unregister();
 }

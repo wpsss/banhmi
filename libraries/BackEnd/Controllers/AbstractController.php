@@ -2,7 +2,7 @@
 /**
  * AbstractController
  */
-use Banhmi\AbstractController as BaseController;
+use Banhmi\BaseController;
 
 abstract class AbstractController extends BaseController
 {

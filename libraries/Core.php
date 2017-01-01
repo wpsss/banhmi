@@ -124,9 +124,8 @@ final class Core
      */
     private function registerServices()
     {
-        $this->services->js   = wp_scripts();
-        $this->services->css  = wp_styles();
-        $this->services->tpl  = new Helpers\Template($this);
+        $this->services->js = wp_scripts();
+        $this->services->css = wp_styles();
         $this->services->view = new Helpers\ViewFactory($this);
 
         if (!is_admin()) {
@@ -324,39 +323,34 @@ final class Core
     function _includeMasterTemplate($template)
     {
         $query = clone $GLOBALS['wp_query'];
+        $tpl = basename($template);
+        $head = locate_template([
+            'part-templates/head-' . $tpl,
+            'part-templates/head.php']
+        );
+        $main = locate_template([
+            'part-templates/main-' . $tpl,
+            'page-templates/' . $tpl,
+            $tpl]
+        );
+        $header = locate_template([
+            'part-templates/header-' . $tpl,
+            'part-templates/header.php']
+        );
+        $footer = locate_template([
+            'part-templates/footer-' . $tpl,
+            'part-templates/footer.php']
+        );
+        $callback = apply_filters('page_output_buffering_callback', 'Banhmi\Helpers\Html::minify', $query);
 
-        // $cached = wp_cache_get($query->query_vars_hash, 'pages');
+        ob_start($callback);
 
-        // if ($cached) {
-        //     exit($cached);
-        // } else {
-            $tpl = basename($template);
-            $head = locate_template([
-                'part-templates/head-' . $tpl,
-                'part-templates/head.php']
-            );
-            $main = locate_template([
-                'part-templates/main-' . $tpl,
-                'page-templates/' . $tpl,
-                $tpl]
-            );
-            $header = locate_template([
-                'part-templates/header-' . $tpl,
-                'part-templates/header.php']
-            );
-            $footer = locate_template([
-                'part-templates/footer-' . $tpl,
-                'part-templates/footer.php']
-            );
-            $callback = apply_filters('page_output_buffering_callback', 'Banhmi\Helpers\Html::minify', $query);
-            ob_start($callback);
-            include $this->options['basedir'] . 'part-templates/base.php';
-            $html = ob_get_contents();
-            ob_clean();
-            // if (wp_using_ext_object_cache()) {
-            //     wp_cache_set($query->query_vars_hash, $html, 'pages');
-            // }
-            exit($html);
-        // }
+        include $this->options['basedir'] . 'part-templates/base.php';
+
+        $html = ob_get_contents();
+
+        ob_clean();
+
+        exit($html);
     }
 }
